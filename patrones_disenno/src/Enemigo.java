@@ -6,11 +6,13 @@ import java.util.*;
  */
 public class Enemigo extends Entidades {
 
-    /**
-     * Default constructor
-     */
-    public Enemigo() {
+    public Enemigo(int pos_x, int pos_y ) {
+        super(pos_x, pos_y, Enemy_Color, -1);
+        //TODO Auto-generated constructor stub
     }
 
+    
+
+    
 
 }

@@ -1,10 +1,10 @@
 
 import java.util.*;
-
+import javax.swing.JButton;
 /**
  * 
  */
-public class GUI  {
+public class GUI extends JButton implements Constantes  {
 
     public Tablero mapa;
 
