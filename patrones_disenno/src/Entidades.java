@@ -5,7 +5,7 @@ import java.util.*;
 /**
  * 
  */
-public class Entidades implements Constantes{
+public abstract class Entidades implements Constantes{
     public int pos[];
     public int pos_anterior[];
     public Color color;
@@ -30,7 +30,12 @@ public class Entidades implements Constantes{
         }
         if(objetivo[Y] != pos[Y]){
             pos[Y]+=(objetivo[Y]-pos[Y])/Math.abs(objetivo[Y]-pos[Y]);
-        }
-            
+        }            
+    }
+
+    public void actualizar(int new_x_target,int new_y_target){
+        objetivo[X]=new_x_target;
+        objetivo[Y]=new_y_target;
+
     }
 }
