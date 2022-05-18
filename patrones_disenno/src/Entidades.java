@@ -5,38 +5,18 @@ import java.util.*;
  * 
  */
 public class Entidades {
-
-    /**
-     * Default constructor
-     */
+    public int pos;
+    public int pos_anterior;
+    public String Color;
+    public int vida;
+    public int objetivo[];
+    
+    
     public Entidades() {
     }
 
-    /**
-     * 
-     */
-    public int pos;
-
-    /**
-     * 
-     */
-    public int pos_anterior;
-
-
-    /**
-     * 
-     */
-    public String Color;
-
-    /**
-     * 
-     */
-    public int vida;
-
-    /**
-     * 
-     */
-    public int objetivo[];
+    
+    
 
 
 

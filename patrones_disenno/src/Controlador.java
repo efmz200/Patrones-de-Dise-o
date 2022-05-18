@@ -12,47 +12,23 @@ public class Controlador {
     public Controlador() {
     }
 
-
-
-
-
-
-
-    /**
-     * @return
-     */
-    public void moverPersonaje() {
+    public void revisarTurnos() {
         // TODO implement here
         
     }
 
-    /**
-     * @return
-     */
-    public void atacar() {
+    public void crearAliado() {
         // TODO implement here
         
     }
 
-    /**
-     * @return
-     */
-    public void notificar() {
+    
+    public void eliminarAliado() {
         // TODO implement here
-        
+       
     }
 
-    /**
-     * 
-     */
-    public void moverEnemigos() {
-        // TODO implement here
-    }
-
-    /**
-     * 
-     */
-    public void mostrarAliados() {
+    public void Operation1() {
         // TODO implement here
     }
 

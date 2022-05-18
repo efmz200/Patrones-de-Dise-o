@@ -4,12 +4,15 @@ import java.util.*;
 /**
  * 
  */
-public class JButton extends Tablero {
+public class mapa {
 
     /**
      * Default constructor
      */
-    public JButton() {
+    public mapa() {
     }
+
+
+
 
 }

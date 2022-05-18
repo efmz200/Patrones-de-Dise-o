@@ -4,18 +4,14 @@ import java.util.*;
 /**
  * 
  */
-public class GUI extends JButton {
+public class GUI  {
 
-    /**
-     * Default constructor
-     */
+    public Tablero mapa;
+
     public GUI() {
     }
 
-    /**
-     * 
-     */
-    public Tablero mapa;
+   
 
 
 
