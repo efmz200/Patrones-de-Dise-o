@@ -2,10 +2,8 @@
 import java.awt.Color;
 import java.util.*;
 
-/**
- * 
- */
-public abstract class Entidades implements Constantes{
+
+public class Entidades implements Constantes{
     public int pos[];
     public int pos_anterior[];
     public Color color;
