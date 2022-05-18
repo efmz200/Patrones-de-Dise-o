@@ -1,4 +1,5 @@
 
+import java.awt.Dimension;
 import java.util.*;
 import javax.swing.JButton;
 /**
@@ -10,8 +11,8 @@ public class GUI extends JButton implements Constantes  {
 
     public GUI() {
         mapa = new Tablero();
-        setBackground(BG_COLOR);
-        setPreferredSize(new Dimension(CASILLA_WIDTH, CASILLA_HEIGHT));
+        setBackground(BG_Color);
+        setPreferredSize(new Dimension(Casilla_Width, Casilla_Height));
         
 
     }
