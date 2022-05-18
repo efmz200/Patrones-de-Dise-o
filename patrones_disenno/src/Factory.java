@@ -3,14 +3,12 @@ import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 
-
-
 public class Factory implements Constantes { 
 
 
     public Factory(int posx, int posy) {
-    }
 
+    }
 
     public void crearEntidad (String tipo) {
 
