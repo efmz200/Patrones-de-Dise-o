@@ -3,11 +3,7 @@ import java.util.*;
 import java.awt.Dimension;
 import javax.swing.JButton;
 
-<<<<<<< Updated upstream
-public class casilla extends JButton implements Constantes {
-=======
 public class Casilla implements Constantes {
->>>>>>> Stashed changes
     public int[] coordenadas;
 
     public Casilla(int posx, int posy) {
