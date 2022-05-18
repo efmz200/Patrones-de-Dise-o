@@ -25,6 +25,12 @@ public class Entidades implements Constantes{
     }
 
     public void mover(){
-
+        if(objetivo[X] != pos[X]){
+            pos[X]+=(objetivo[X]-pos[X])/Math.abs(objetivo[X]-pos[X]);
+        }
+        if(objetivo[Y] != pos[Y]){
+            pos[Y]+=(objetivo[Y]-pos[Y])/Math.abs(objetivo[Y]-pos[Y]);
+        }
+            
     }
 }
