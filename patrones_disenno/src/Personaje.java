@@ -1,27 +1,27 @@
 
 import java.util.*;
+import java.awt.*;
+import javax.swing.*;
 
-/**
- * 
- */
-public class Personaje {
+public class Personaje implements Constantes {
     public int vida;
-    public int pos;
-    public int pos_anterior;
-    public Enemigo seguidores;
-    public String color;
-    /**
-     * Default constructor
-     */
+    public int pos [];
+    public int pos_anterior [];
+    public Enemigo seguidores [];
+    public Color color;
+
+    public Aliado aliados []; 
+  
     public Personaje() {
+
+        pos[X] = TABLERO_SIZE / 2;
+        pos[Y] = TABLERO_SIZE /2;
+        pos_anterior[X] = TABLERO_SIZE / 2 -1;
+        pos_anterior[Y] = TABLERO_SIZE / 2 -1;
+        vida = 3;
+        color = Ally_Color;
+
     }
+}
 
     
-
-
-
-
-
-
-
-}
