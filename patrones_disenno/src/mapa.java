@@ -9,7 +9,7 @@ import javax.swing.JButton;
 
 public class mapa implements Constantes {
 
-    public casilla[][] tablero;
+    public Casilla[][] tablero;
     public JPanel panelTablero;
 
 
