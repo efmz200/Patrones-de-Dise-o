@@ -1,25 +1,23 @@
 
-import java.util.*;
-import java.awt.*;
-import javax.swing.*;
 
 public class Factory implements Constantes { 
 
 
-    public Factory(int posx, int posy) {
-
+    public Factory() {
     }
 
-    public void crearEntidad (String tipo) {
+    public Entidades crearEntidad (String tipo) {
 
     switch(tipo)  {
         case "Aliado":
             Aliado aliado = new Aliado((int)(Math.random() * TABLERO_SIZE), (int)(Math.random() * TABLERO_SIZE));
-            break;
+            return aliado;
+            
         case "Enemigo":
             Enemigo enemigo = new Enemigo((int)(Math.random() * TABLERO_SIZE), (int)(Math.random() * TABLERO_SIZE));
-            break;
+            return enemigo;
     }
+    return null;
     } 
         
     public void crearAliado(int tipo) {

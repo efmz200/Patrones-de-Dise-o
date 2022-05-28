@@ -1,5 +1,4 @@
 
-import java.util.*;
 import java.awt.Dimension;
 import javax.swing.JButton;
 
@@ -22,7 +21,7 @@ public class Casilla extends JButton implements Constantes {
     }
 
     public void setAsTarget() {
-        setBackground(Enemy_Color);
+        setBackground(Player_Color);
     }
 
     public void clearTarget() {
@@ -30,7 +29,7 @@ public class Casilla extends JButton implements Constantes {
     }
 
     public void setAsDot() {
-        setBackground(Player_Color);
+        setBackground(Enemy_Color);
     }
 
     public void clearDot() {

@@ -2,18 +2,13 @@
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.event.*;
-import java.awt.Color;
-import java.util.*;
-import java.awt.Dimension;
-import javax.swing.JButton;
 
-public class mapa implements Constantes {
+public class Mapa extends JPanel implements Constantes {
 
     public Casilla[][] tablero;
     public JPanel panelTablero;
 
-
-    public mapa(ActionListener listener) {
+    public Mapa(ActionListener listener){
         tablero = new Casilla [TABLERO_SIZE][TABLERO_SIZE];
         panelTablero = new JPanel();
         panelTablero.setLayout(new GridLayout(TABLERO_SIZE,TABLERO_SIZE));
@@ -26,6 +21,7 @@ public class mapa implements Constantes {
         }
        
     }
+    
 
 }
 

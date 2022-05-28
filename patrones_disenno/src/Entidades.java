@@ -1,6 +1,5 @@
 
 import java.awt.Color;
-import java.util.*;
 
 /**
  * 
@@ -25,10 +24,12 @@ public abstract class Entidades implements Constantes{
     }
 
     public void mover(){
+        boolean mov=false;
         if(objetivo[X] != pos[X]){
             pos[X]+=(objetivo[X]-pos[X])/Math.abs(objetivo[X]-pos[X]);
+            mov=true;
         }
-        if(objetivo[Y] != pos[Y]){
+        if(objetivo[Y] != pos[Y] && mov==false){
             pos[Y]+=(objetivo[Y]-pos[Y])/Math.abs(objetivo[Y]-pos[Y]);
         }            
     }

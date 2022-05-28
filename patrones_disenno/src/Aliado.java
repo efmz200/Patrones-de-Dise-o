@@ -1,6 +1,5 @@
 
-import java.awt.Color;
-import java.util.*;
+
 
 /**
  * 
@@ -11,11 +10,4 @@ public class Aliado extends Entidades {
         super(pos_x, pos_y, Ally_Color, 1);
         //TODO Auto-generated constructor stub
     }
-
-   
-
-    
-    
-
-
 }

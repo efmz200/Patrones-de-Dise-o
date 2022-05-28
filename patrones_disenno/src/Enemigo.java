@@ -1,9 +1,3 @@
-
-import java.util.*;
-
-/**
- * 
- */
 public class Enemigo extends Entidades {
 
     public Enemigo(int pos_x, int pos_y ) {

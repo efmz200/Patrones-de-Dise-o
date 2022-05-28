@@ -1,35 +1,27 @@
 
-import java.util.*;
 
-/**
- * 
- */
 public class Controlador {
-
-    /**
-     * Default constructor
-     */
-    public Controlador() {
+    Tablero tablero;
+    Factory creador;
+    public Controlador(Tablero tablero) {
+        this.tablero = tablero;
+        creador = new Factory();
     }
 
     public void revisarTurnos() {
-        // TODO implement here
-        
+        if(tablero.turnos%6==0) {
+            tablero.enemigos.add((Enemigo) creador.crearEntidad("Enemigo"));
+        }
+        if(tablero.turnos%10==0) {
+            tablero.aliados.add((Aliado) creador.crearEntidad("Aliado"));
+        }        
     }
 
-    public void crearAliado() {
-        // TODO implement here
-        
+    public void eliminarAliado(int pos) {
+        tablero.aliados.remove(pos);    
     }
-
-    
-    public void eliminarAliado() {
-        // TODO implement here
-       
-    }
-
-    public void Operation1() {
-        // TODO implement here
+    public void eliminarEnemigo(int pos) {
+        tablero.enemigos.remove(pos);
     }
 
 }
