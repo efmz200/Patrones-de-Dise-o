@@ -26,14 +26,18 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.pack();
         ventana.setVisible(true);
-        actualizarPlayer();    
+        actualizarPlayer(); 
+        generarEnemigos();   
+
+    }
+
+    private void generarEnemigos() {
 
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode()==KeyEvent.VK_W){
-            System.out.println("Arriba");
             if(tablero.jugador.pos[Y]>0){
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
@@ -42,7 +46,6 @@ public class GUI extends JButton implements Constantes, KeyListener  {
             
         }
         if (e.getKeyCode()==KeyEvent.VK_A){
-            System.out.println("Izquierda");
             if(tablero.jugador.pos[X]>0){
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
@@ -50,7 +53,6 @@ public class GUI extends JButton implements Constantes, KeyListener  {
             }
         } 
         if (e.getKeyCode()==KeyEvent.VK_S){
-            System.out.println("Abajo");
             if(tablero.jugador.pos[Y]<TABLERO_SIZE-1){
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
@@ -60,7 +62,6 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         }            
         if (e.getKeyCode()==KeyEvent.VK_D){ 
             if(tablero.jugador.pos[X]<TABLERO_SIZE-1){
-                System.out.println("Derecha");
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
                 tablero.jugador.pos[X]+=1;
@@ -73,8 +74,6 @@ public class GUI extends JButton implements Constantes, KeyListener  {
     }
     public void actualizarPlayer(){
         Personaje pj = tablero.jugador;
-        System.out.println(tablero.jugador.pos_anterior[X]+" "+tablero.jugador.pos_anterior[Y]);
-        System.out.println(tablero.jugador.pos[X]+" "+tablero.jugador.pos[Y]);
         mapa.tablero[pj.pos_anterior[Y]][pj.pos_anterior[X]].clearDot();
         mapa.tablero[pj.pos[Y]][pj.pos[X]].setAsTarget();     
     }
