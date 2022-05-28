@@ -72,11 +72,15 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         } 
         actualizarPlayer();
     }
+
+    
     public void actualizarPlayer(){
         Personaje pj = tablero.jugador;
         mapa.tablero[pj.pos_anterior[Y]][pj.pos_anterior[X]].clearDot();
         mapa.tablero[pj.pos[Y]][pj.pos[X]].setAsTarget();     
     }
+
+    
     @Override
     public void keyTyped(KeyEvent e) {}
 

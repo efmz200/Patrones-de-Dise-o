@@ -1,5 +1,5 @@
 
-public class Controlador {
+public class Controlador implements Constantes {
     Tablero tablero;
     Factory creador;
     public Controlador(Tablero tablero) {
@@ -31,6 +31,14 @@ public class Controlador {
     public void Add_Enemigo () {
         tablero.enemigos.add((Enemigo) creador.crearEntidad("Enemigo"));
         
+    }
+
+    public void Actualizar_enemigo () {
+        Personaje jugador = tablero.jugador;
+        for(int i = 0; i < tablero.jugador.seguidores.size(); i++) {
+            tablero.jugador.seguidores.get(i).objetivo[X] = jugador.pos[X];
+            tablero.jugador.seguidores.get(i).objetivo[Y] = jugador.pos[Y];
+        }
     }
 
 }
