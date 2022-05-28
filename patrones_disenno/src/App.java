@@ -1,5 +1,6 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        GUI app = new GUI();     
+        GUI jueguito = new GUI();   
+        jueguito.aliados.getClass();  
     }
 }
