@@ -40,11 +40,13 @@ public class GUI extends JButton implements Constantes, KeyListener  {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        boolean mover= false;
         if (e.getKeyCode()==KeyEvent.VK_W){
             if(tablero.jugador.pos[Y]>0){
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
                 tablero.jugador.pos[Y] -=1;
+                mover= true;
             }
             
         }
@@ -53,13 +55,15 @@ public class GUI extends JButton implements Constantes, KeyListener  {
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
                 tablero.jugador.pos[X] -=1;
+                mover= true;
             }
         } 
         if (e.getKeyCode()==KeyEvent.VK_S){
             if(tablero.jugador.pos[Y]<TABLERO_SIZE-1){
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
-                tablero.jugador.pos[Y]+=1;            
+                tablero.jugador.pos[Y]+=1;   
+                mover= true;         
             }
             
         }            
@@ -68,11 +72,15 @@ public class GUI extends JButton implements Constantes, KeyListener  {
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
                 tablero.jugador.pos[X]+=1;
+                mover= true;
             }           
         }
         if (e.getKeyCode()==KeyEvent.VK_SPACE){
             System.out.println("dispara");
         } 
+        if (mover){
+            
+        }
         actualizarPlayer();
     }
     public void actualizarEnemies(){
@@ -87,8 +95,6 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         mapa.tablero[pj.pos_anterior[Y]][pj.pos_anterior[X]].clearDot();
         mapa.tablero[pj.pos[Y]][pj.pos[X]].setAsTarget();     
     }
-
-    
     @Override
     public void keyTyped(KeyEvent e) {}
 
