@@ -1,9 +1,3 @@
-
-
-
-/**
- * 
- */
 public class Aliado extends Entidades {
     boolean mostrar;
     public Aliado(int pos_x, int pos_y) {
