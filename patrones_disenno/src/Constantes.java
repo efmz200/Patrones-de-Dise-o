@@ -13,6 +13,4 @@ public interface Constantes {
     public static final Color BG_Color = Color.LIGHT_GRAY;
     public static final Color Enemy_Color = Color.PINK;
     public static final Color Ally_Color = Color.GREEN;
-    
-
 }

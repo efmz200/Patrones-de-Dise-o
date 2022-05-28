@@ -54,7 +54,8 @@ public class GUI extends JButton implements Constantes, KeyListener  {
             if(tablero.jugador.pos[Y]<TABLERO_SIZE-1){
                 tablero.jugador.pos_anterior[X]=tablero.jugador.pos[X];
                 tablero.jugador.pos_anterior[Y]=tablero.jugador.pos[Y];
-                tablero.jugador.pos[Y]+=1;            }
+                tablero.jugador.pos[Y]+=1;            
+            }
             
         }            
         if (e.getKeyCode()==KeyEvent.VK_D){ 
