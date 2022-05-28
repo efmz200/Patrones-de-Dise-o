@@ -27,12 +27,15 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         ventana.pack();
         ventana.setVisible(true);
         actualizarPlayer(); 
-        generarEnemigos();   
+        generarEnemigosIniciales();   
 
     }
 
-    private void generarEnemigos() {
-
+    private void generarEnemigosIniciales() {
+        control.Add_Enemigo();
+        control.Add_Enemigo();
+        control.Add_Enemigo();
+        
     }
 
     @Override
@@ -72,8 +75,13 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         } 
         actualizarPlayer();
     }
-
-    
+    public void actualizarEnemies(){
+        for (int i=0; i<tablero.enemigos.size(); i++){
+            Enemigo enemy = tablero.enemigos.get(i);
+            mapa.tablero[enemy.pos_anterior[Y]][enemy.pos_anterior[X]].clearDot();
+            mapa.tablero[enemy.pos[Y]][enemy.pos[X]].setAsTarget(); 
+        }
+    }
     public void actualizarPlayer(){
         Personaje pj = tablero.jugador;
         mapa.tablero[pj.pos_anterior[Y]][pj.pos_anterior[X]].clearDot();
