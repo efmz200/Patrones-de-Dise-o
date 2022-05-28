@@ -1,5 +1,4 @@
 
-
 public class Controlador {
     Tablero tablero;
     Factory creador;
@@ -22,6 +21,16 @@ public class Controlador {
     }
     public void eliminarEnemigo(int pos) {
         tablero.enemigos.remove(pos);
+    }
+
+    public void Add_Aliado () {
+        tablero.aliados.add((Aliado) creador.crearEntidad("Aliado"));
+
+    }
+
+    public void Add_Enemigo () {
+        tablero.enemigos.add((Enemigo) creador.crearEntidad("Enemigo"));
+        
     }
 
 }
