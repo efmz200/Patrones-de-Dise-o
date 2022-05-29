@@ -13,6 +13,9 @@ public abstract class Entidades implements Constantes{
     
     
     public Entidades(int pos_x,int pos_y,Color enemyColor,int vida) {
+        pos= new int[2];
+        pos_anterior= new int[2];
+        objetivo= new int[2];
         pos[X]=pos_x;
         pos[Y]=pos_y;
         pos_anterior[X]=pos_x;
@@ -25,6 +28,8 @@ public abstract class Entidades implements Constantes{
 
     public void mover(){
         boolean mov=false;
+        pos_anterior[X]=pos[X];
+        pos_anterior[Y]=pos[Y];
         if(objetivo[X] != pos[X]){
             pos[X]+=(objetivo[X]-pos[X])/Math.abs(objetivo[X]-pos[X]);
             mov=true;

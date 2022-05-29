@@ -21,14 +21,13 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         ventana = new JFrame();
         mapa = new Mapa(this); 
         tablero = new Tablero();
-        Controlador control = new Controlador(tablero);
+        control = new Controlador(tablero);
         ventana.add(mapa.panelTablero);
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.pack();
         ventana.setVisible(true);
         actualizarPlayer(); 
-        generarEnemigosIniciales();   
-
+        generarEnemigosIniciales();
     }
 
     private void generarEnemigosIniciales() {
@@ -79,15 +78,18 @@ public class GUI extends JButton implements Constantes, KeyListener  {
             System.out.println("dispara");
         } 
         if (mover){
+            actualizarPlayer();
+            control.Actualizar_enemigo(); 
+            actualizarEnemies();  
             
         }
-        actualizarPlayer();
+        
     }
     public void actualizarEnemies(){
         for (int i=0; i<tablero.enemigos.size(); i++){
             Enemigo enemy = tablero.enemigos.get(i);
-            mapa.tablero[enemy.pos_anterior[Y]][enemy.pos_anterior[X]].clearDot();
-            mapa.tablero[enemy.pos[Y]][enemy.pos[X]].setAsTarget(); 
+            mapa.tablero[enemy.pos_anterior[Y]][enemy.pos_anterior[X]].clearTarget();
+            mapa.tablero[enemy.pos[Y]][enemy.pos[X]].setAsDot(); 
         }
     }
     public void actualizarPlayer(){

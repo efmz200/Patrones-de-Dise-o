@@ -30,7 +30,7 @@ public class Controlador implements Constantes {
 
     public void Add_Enemigo () {
         tablero.enemigos.add((Enemigo) creador.crearEntidad("Enemigo"));
-        
+        tablero.jugador.seguidores=tablero.enemigos;        
     }
 
     public void Actualizar_enemigo () {
@@ -38,7 +38,9 @@ public class Controlador implements Constantes {
         for(int i = 0; i < tablero.jugador.seguidores.size(); i++) {
             tablero.jugador.seguidores.get(i).objetivo[X] = jugador.pos[X];
             tablero.jugador.seguidores.get(i).objetivo[Y] = jugador.pos[Y];
+            tablero.jugador.seguidores.get(i).mover();
         }
     }
+    
 
 }
