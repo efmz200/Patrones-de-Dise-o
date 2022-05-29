@@ -41,6 +41,4 @@ public class Controlador implements Constantes {
             tablero.jugador.seguidores.get(i).mover();
         }
     }
-    
-
 }
