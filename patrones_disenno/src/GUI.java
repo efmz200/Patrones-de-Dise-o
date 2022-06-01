@@ -84,7 +84,9 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         } 
         if (e.getKeyCode()==KeyEvent.VK_SPACE){
             control.addTurno();  
-            control.moverEnemigos();          
+            control.moverEnemigos();
+            limpiarMapa(); 
+            actualizarAliados();         
             actualizarEnemies();                       
             actualizarPlayer();
         } 
@@ -95,38 +97,41 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         }
         if (mover){
             control.addTurno();
+            limpiarMapa();
             actualizarAliados(); 
             actualizarEnemies();            
             actualizarPlayer();
         }
         
     }
-    
+     public void limpiarMapa(){
+         for (int i=0; i<TABLERO_SIZE; i++){
+             for(int j=0;j<TABLERO_SIZE;j++){
+                 mapa.tablero[i][j].clearDot();
+             }
+         }
+     }
     public void actualizarEnemies(){
         for (int i=0; i<tablero.enemigos.size(); i++){
             Enemigo enemy = tablero.enemigos.get(i);
-            mapa.tablero[enemy.pos_anterior[Y]][enemy.pos_anterior[X]].clearDot();
+            //mapa.tablero[enemy.pos_anterior[Y]][enemy.pos_anterior[X]].clearDot();
             mapa.tablero[enemy.pos[Y]][enemy.pos[X]].setAsDot(); 
         }
     }
     public void actualizarPlayer(){
         Personaje pj = tablero.jugador;
-        mapa.tablero[pj.pos_anterior[Y]][pj.pos_anterior[X]].clearDot();
+        //mapa.tablero[pj.pos_anterior[Y]][pj.pos_anterior[X]].clearDot();
         mapa.tablero[pj.pos[Y]][pj.pos[X]].setAsTarget();     
     }
     public void actualizarAliados(){
         System.out.println("aliados");
         for (int i=0; i<tablero.aliados.size(); i++){
-            Aliado al = tablero.aliados.get(i);
-            System.out.println("otro");
-            System.out.println(al.pos[X]); 
-            System.out.println(al.pos[Y]);
-            System.out.println(al.mostrar);             
+            Aliado al = tablero.aliados.get(i);                       
             if(al.mostrar){
                 mapa.tablero[al.pos[Y]][al.pos[X]].setAsAli(); 
                 continue;   
             }else{
-                mapa.tablero[al.pos[Y]][al.pos[X]].clearDot();    
+                //mapa.tablero[al.pos[Y]][al.pos[X]].clearDot();    
             }
         }
     }
