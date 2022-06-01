@@ -1,4 +1,3 @@
-
 public class Controlador implements Constantes {
     Tablero tablero;
     Factory creador;
@@ -9,15 +8,16 @@ public class Controlador implements Constantes {
 
     public void revisarTurnos() {
         if(tablero.turnos%6==0) {
-            tablero.enemigos.add((Enemigo) creador.crearEntidad("Enemigo"));
+           Add_Enemigo();
         }
         if(tablero.turnos%10==0) {
-            tablero.aliados.add((Aliado) creador.crearEntidad("Aliado"));
+            Add_Aliado();
         }        
     }
 
     public void addTurno(){
         tablero.turnos++;
+        revisarColisiones();
         revisarTurnos();
     }
     public void eliminarAliado(int pos) {
@@ -28,13 +28,16 @@ public class Controlador implements Constantes {
         tablero.enemigos.remove(pos);
     }
 
-    public void Add_Aliado () {
-        tablero.aliados.add((Aliado) creador.crearEntidad("Aliado"));
+    public void Add_Aliado () {   
+        int pj_pos[] = tablero.jugador.pos;  
+        if (tablero.aliados.size()<5)   
+            tablero.aliados.add((Aliado) creador.crearEntidad("Aliado",pj_pos[X],pj_pos[Y]));
 
     }
 
     public void Add_Enemigo () {
-        tablero.enemigos.add((Enemigo) creador.crearEntidad("Enemigo"));
+        int pj_pos[] = tablero.jugador.pos;
+        tablero.enemigos.add((Enemigo) creador.crearEntidad("Enemigo",pj_pos[X],pj_pos[Y]));
         tablero.jugador.seguidores=tablero.enemigos;        
     }
 
@@ -51,7 +54,31 @@ public class Controlador implements Constantes {
             tablero.jugador.seguidores.get(i).mover();
         }
     }
-
+    public void revisarColisiones(){
+        Personaje pj = tablero.jugador;
+        for(int i=0; i< tablero.enemigos.size(); i++){
+            Enemigo enemy= pj.seguidores.get(i);
+            if(pj.pos[X]==enemy.pos[X]&& pj.pos[Y]==enemy.pos[Y]){
+                pj.vida--;
+                tablero.enemigos.remove(i);
+            }
+        }
+        for (int i=0; i< pj.aliados.size();i++){
+            Aliado al =tablero.aliados.get(i);
+            if(pj.pos[X]==al.pos[X]&& pj.pos[Y]==al.pos[Y]){
+                if(pj.vida<5)
+                    pj.vida++;
+                tablero.aliados.remove(i);
+            }
+        }
+    }
+    public boolean muerto(){
+        if(tablero.jugador.vida==0){
+            return true;
+        }else{
+            return false;
+        }
+    }
     public void movPlayer(String dir){
         tablero.jugador.mover(dir);
     }

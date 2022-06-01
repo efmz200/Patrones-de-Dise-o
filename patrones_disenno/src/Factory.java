@@ -6,7 +6,7 @@ public class Factory implements Constantes {
     public Factory() {
     }
 
-    public Entidades crearEntidad (String tipo) {
+    public Entidades crearEntidad (String tipo,int obj_x,int obj_y) {
 
     switch(tipo)  {
         case "Aliado":
@@ -14,7 +14,7 @@ public class Factory implements Constantes {
             return aliado;
             
         case "Enemigo":
-            Enemigo enemigo = new Enemigo((int)(Math.random() * TABLERO_SIZE), (int)(Math.random() * TABLERO_SIZE));
+            Enemigo enemigo = new Enemigo((int)(Math.random() * TABLERO_SIZE), (int)(Math.random() * TABLERO_SIZE),obj_x,obj_y);
             return enemigo;
     }
     return null;

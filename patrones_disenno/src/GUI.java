@@ -2,6 +2,8 @@
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import java.awt.event.*;
 /**
  * 
@@ -17,6 +19,7 @@ public class GUI extends JButton implements Constantes, KeyListener  {
     Controlador control;
 
 
+
     public GUI () {
         ventana = new JFrame();
         mapa = new Mapa(this); 
@@ -26,7 +29,7 @@ public class GUI extends JButton implements Constantes, KeyListener  {
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.pack();
         ventana.setVisible(true);
-        actualizarPlayer(); 
+        actualizarPlayer();
         generarEntidades();
         actualizarEnemies();
     }
@@ -41,9 +44,8 @@ public class GUI extends JButton implements Constantes, KeyListener  {
     }
 
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {     
         boolean mover= false;
-        int ataque =-1;
         if (e.getKeyCode()==KeyEvent.VK_W){
             if(tablero.jugador.pos[Y]>0){
                 control.movPlayer("W");
@@ -71,67 +73,71 @@ public class GUI extends JButton implements Constantes, KeyListener  {
             }           
         }
         if (e.getKeyCode()==KeyEvent.VK_UP){
-            ataque=control.tablero.jugador.atacar("Up");
+            control.tablero.jugador.atacar("Up");
         } 
         if (e.getKeyCode()==KeyEvent.VK_DOWN){
-            ataque=control.tablero.jugador.atacar("Dw");
+            control.tablero.jugador.atacar("Dw");
             } 
         if (e.getKeyCode()==KeyEvent.VK_LEFT){
-            ataque=control.tablero.jugador.atacar("L");
+            control.tablero.jugador.atacar("L");
         } 
         if (e.getKeyCode()==KeyEvent.VK_RIGHT){
-            ataque=control.tablero.jugador.atacar("R");
+            control.tablero.jugador.atacar("R");
         } 
         if (e.getKeyCode()==KeyEvent.VK_SPACE){
             control.addTurno();  
+            if(control.muerto()){
+                JOptionPane.showMessageDialog(this,"Has perdido");
+                System.exit(0);   
+            }
             control.moverEnemigos();
             limpiarMapa(); 
             actualizarAliados();         
             actualizarEnemies();                       
             actualizarPlayer();
         } 
-        if (ataque>-1){
-            Enemigo enemigo = tablero.enemigos.get(ataque);
-            mapa.tablero[enemigo.pos[Y]][enemigo.pos[X]].clearDot();
-            control.eliminarEnemigo(ataque);
-        }
+        
         if (mover){
             control.addTurno();
+            if(control.muerto()){
+                JOptionPane.showMessageDialog(this,"Has perdido");
+                System.exit(0);   
+            }
             limpiarMapa();
             actualizarAliados(); 
             actualizarEnemies();            
             actualizarPlayer();
+        }else if (!mover){
+            limpiarMapa();
+            actualizarAliados(); 
+            actualizarEnemies();            
+            actualizarPlayer();     
         }
         
     }
-     public void limpiarMapa(){
-         for (int i=0; i<TABLERO_SIZE; i++){
-             for(int j=0;j<TABLERO_SIZE;j++){
-                 mapa.tablero[i][j].clearDot();
-             }
-         }
-     }
+    public void limpiarMapa(){
+        for (int i=0; i<TABLERO_SIZE; i++){
+            for(int j=0;j<TABLERO_SIZE;j++){
+                mapa.tablero[i][j].clearDot();
+            }
+        }
+    }
     public void actualizarEnemies(){
         for (int i=0; i<tablero.enemigos.size(); i++){
             Enemigo enemy = tablero.enemigos.get(i);
-            //mapa.tablero[enemy.pos_anterior[Y]][enemy.pos_anterior[X]].clearDot();
             mapa.tablero[enemy.pos[Y]][enemy.pos[X]].setAsDot(); 
         }
     }
     public void actualizarPlayer(){
         Personaje pj = tablero.jugador;
-        //mapa.tablero[pj.pos_anterior[Y]][pj.pos_anterior[X]].clearDot();
-        mapa.tablero[pj.pos[Y]][pj.pos[X]].setAsTarget();     
+        mapa.tablero[pj.pos[Y]][pj.pos[X]].setAsTarget(tablero.jugador.vida);     
     }
     public void actualizarAliados(){
-        System.out.println("aliados");
         for (int i=0; i<tablero.aliados.size(); i++){
             Aliado al = tablero.aliados.get(i);                       
             if(al.mostrar){
                 mapa.tablero[al.pos[Y]][al.pos[X]].setAsAli(); 
                 continue;   
-            }else{
-                //mapa.tablero[al.pos[Y]][al.pos[X]].clearDot();    
             }
         }
     }

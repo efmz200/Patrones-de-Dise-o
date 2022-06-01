@@ -10,8 +10,9 @@ public interface Constantes {
     public static final int TABLERO_SIZE = 15;
     public static final int CERCANO = 3;
 
-    public static final Color Player_Color = Color.BLUE;
+    public static final Color Player_Color = Color.GREEN;
     public static final Color BG_Color = Color.LIGHT_GRAY;
-    public static final Color Enemy_Color = Color.PINK;
-    public static final Color Ally_Color = Color.GREEN;
+    public static final Color Enemy_Color = Color.RED;
+    public static final Color Ally_Color = Color.CYAN;
+    public static final Color Text_Color = Color.BLACK;
 }

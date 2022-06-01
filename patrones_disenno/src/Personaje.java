@@ -28,7 +28,6 @@ public class Personaje implements Constantes {
     public void mover(String dir) {
         pos_anterior[X]=pos[X];
         pos_anterior[Y]=pos[Y];
-        System.out.println(dir);
         switch(dir){
             case "W":
                 pos[Y] -=1;
@@ -47,15 +46,13 @@ public class Personaje implements Constantes {
             seguidores.get(i).objetivo[X]=pos[X];
             seguidores.get(i).objetivo[Y]=pos[Y];
             seguidores.get(i).mover();
-            System.out.println(i);
         }
         for (int i=0; i<aliados.size(); i++){
             aliados.get(i).mostrarme(this);
-            System.out.println(aliados.get(i).mostrar);
         }
 
     }
-    public int atacar(String dir){
+    public void atacar(String dir){
         int ataque[]= new int[2];
         ataque[X]=pos[X];
         ataque[Y]=pos[Y];
@@ -75,10 +72,9 @@ public class Personaje implements Constantes {
         }
         for (int i=0; i<seguidores.size(); i++){
             if(seguidores.get(i).pos[X]==ataque[X] && seguidores.get(i).pos[Y]==ataque[Y]){
-                return i;
+                seguidores.remove(i);
             }
-        }
-        return -1;
+        }        
     }
 }
 

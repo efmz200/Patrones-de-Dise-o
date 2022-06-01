@@ -18,8 +18,7 @@ public class Mapa extends JPanel implements Constantes {
                 tablero[i][j].addKeyListener(listener);
                 panelTablero.add(tablero[i][j]);
             }
-        }
-       
+        }       
     }
     
 

@@ -20,12 +20,14 @@ public class Casilla extends JButton implements Constantes {
         return coordenadas;
     }
 
-    public void setAsTarget() {
-        setBackground(Player_Color);
+    public void setAsTarget(int vida) {
+        setBackground(Player_Color);        
+        setText(Integer.toString(vida));
+        setForeground(Text_Color);
     }
 
     public void setAsDot() {
-        setBackground(Enemy_Color);
+        setBackground(Enemy_Color);        
     }
 
     public void setAsAli(){
@@ -33,5 +35,6 @@ public class Casilla extends JButton implements Constantes {
     }
     public void clearDot() {
         setBackground(BG_Color);
+        setText("");
     }
 }
