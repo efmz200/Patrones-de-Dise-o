@@ -16,6 +16,6 @@ public class Tablero {
         turnos = 0;
         enemigos = new ArrayList<Enemigo>() ; 
         aliados = new ArrayList<Aliado>(); 
-        jugador = new Personaje(); 
+        jugador = new Personaje(enemigos,aliados); 
     }
 }

@@ -24,14 +24,13 @@ public class Casilla extends JButton implements Constantes {
         setBackground(Player_Color);
     }
 
-    public void clearTarget() {
-        setBackground(BG_Color);
-    }
-
     public void setAsDot() {
         setBackground(Enemy_Color);
     }
 
+    public void setAsAli(){
+        setBackground(Ally_Color);
+    }
     public void clearDot() {
         setBackground(BG_Color);
     }

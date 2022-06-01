@@ -8,6 +8,7 @@ public interface Constantes {
     public static final int Casilla_Height = 50;
     
     public static final int TABLERO_SIZE = 15;
+    public static final int CERCANO = 3;
 
     public static final Color Player_Color = Color.BLUE;
     public static final Color BG_Color = Color.LIGHT_GRAY;
