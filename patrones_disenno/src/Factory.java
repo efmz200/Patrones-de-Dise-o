@@ -20,7 +20,5 @@ public class Factory implements Constantes {
     return null;
     } 
         
-    public void crearAliado(int tipo) {
-
-    }
+   
 }

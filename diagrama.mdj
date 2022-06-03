@@ -1154,74 +1154,6 @@
 										},
 										{
 											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGBKz3eBR78yvI=",
-											"_parent": {
-												"$ref": "AAAAAAGAv+bYeisWuKQ="
-											},
-											"model": {
-												"$ref": "AAAAAAGBKz3eAR75KHY="
-											},
-											"font": "Arial;13;0",
-											"left": 293,
-											"top": 875,
-											"width": 191,
-											"height": 13,
-											"text": "+jugador: Personajes",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGBKz4+KCFWjMs=",
-											"_parent": {
-												"$ref": "AAAAAAGAv+bYeisWuKQ="
-											},
-											"model": {
-												"$ref": "AAAAAAGBKz4+IyFTvFI="
-											},
-											"font": "Arial;13;0",
-											"left": 293,
-											"top": 890,
-											"width": 191,
-											"height": 13,
-											"text": "+enemigos: Entidades",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGBKz5y7SJEiO4=",
-											"_parent": {
-												"$ref": "AAAAAAGAv+bYeisWuKQ="
-											},
-											"model": {
-												"$ref": "AAAAAAGBKz5y6SJBH3c="
-											},
-											"font": "Arial;13;0",
-											"left": 293,
-											"top": 905,
-											"width": 191,
-											"height": 13,
-											"text": "+aliados: Entidades",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
-											"_id": "AAAAAAGBKz6RMiMy4XA=",
-											"_parent": {
-												"$ref": "AAAAAAGAv+bYeisWuKQ="
-											},
-											"model": {
-												"$ref": "AAAAAAGBKz6RLSMv38c="
-											},
-											"font": "Arial;13;0",
-											"left": 293,
-											"top": 920,
-											"width": 191,
-											"height": 13,
-											"text": "+turnos: int",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLAttributeView",
 											"_id": "AAAAAAGBKz6jBCQgIk0=",
 											"_parent": {
 												"$ref": "AAAAAAGAv+bYeisWuKQ="
@@ -1231,7 +1163,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 935,
+											"top": 875,
 											"width": 191,
 											"height": 13,
 											"text": "+control: Controlador",
@@ -1242,7 +1174,7 @@
 									"left": 288,
 									"top": 825,
 									"width": 201,
-									"height": 128
+									"height": 68
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -1265,7 +1197,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 958,
+											"top": 898,
 											"width": 191,
 											"height": 13,
 											"text": "+limpiarMapa(): void",
@@ -1282,7 +1214,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 973,
+											"top": 913,
 											"width": 191,
 											"height": 13,
 											"text": "+actualizarEnemies(): void",
@@ -1299,7 +1231,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 988,
+											"top": 928,
 											"width": 191,
 											"height": 13,
 											"text": "+actualizarPlayer(): void",
@@ -1316,7 +1248,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 293,
-											"top": 1003,
+											"top": 943,
 											"width": 191,
 											"height": 13,
 											"text": "+actualizarAliados(): void",
@@ -1325,7 +1257,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 288,
-									"top": 953,
+									"top": 893,
 									"width": 201,
 									"height": 68
 								},
@@ -7046,7 +6978,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGAltihvs89B/I="
 							},
-							"name": "ventana JFrame"
+							"name": "ventana JFrame",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -7058,46 +6991,6 @@
 							"type": {
 								"$ref": "AAAAAAGAltbTSc778z4="
 							}
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGBKz3eAR75KHY=",
-							"_parent": {
-								"$ref": "AAAAAAGAltihvs89B/I="
-							},
-							"name": "jugador",
-							"type": "Personajes"
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGBKz4+IyFTvFI=",
-							"_parent": {
-								"$ref": "AAAAAAGAltihvs89B/I="
-							},
-							"name": "enemigos",
-							"type": {
-								"$ref": "AAAAAAGAltm0U8+9PbQ="
-							}
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGBKz5y6SJBH3c=",
-							"_parent": {
-								"$ref": "AAAAAAGAltihvs89B/I="
-							},
-							"name": "aliados",
-							"type": {
-								"$ref": "AAAAAAGAltm0U8+9PbQ="
-							}
-						},
-						{
-							"_type": "UMLAttribute",
-							"_id": "AAAAAAGBKz6RLSMv38c=",
-							"_parent": {
-								"$ref": "AAAAAAGAltihvs89B/I="
-							},
-							"name": "turnos",
-							"type": "int"
 						},
 						{
 							"_type": "UMLAttribute",

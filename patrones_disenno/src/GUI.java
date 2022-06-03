@@ -12,10 +12,6 @@ public class GUI extends JButton implements Constantes, KeyListener  {
     JFrame ventana;
     Mapa mapa;
     Tablero tablero;
-    Personaje jugador;
-    Entidades enemigos[];
-    Entidades aliados[]; 
-    int turnos;
     Controlador control;
 
 
